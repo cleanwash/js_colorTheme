@@ -9,6 +9,13 @@ const colors = ['hotpink', 'cornflowerblue', 'violet', '#333'];
 const btns = createPickerDOM(colors);
 console.log(btns);
 
+btns.forEach((el, idx) => {
+	el.addEventListener('click', (e) => {
+		const color = e.currentTarget.innerText;
+		console.log(color);
+	});
+});
+
 function createPickerDOM(arr) {
 	const aside = document.createElement('aside');
 	aside.classList.add('picker');
@@ -22,3 +29,13 @@ function createPickerDOM(arr) {
 
 	return document.querySelectorAll('aside span');
 }
+
+function setCookie(name, value, expires) {
+	let now = new Date();
+	let duedate = now.getTime() + 1000 * 60 * 60 * expires; //1시간
+	now.setTime(duedate);
+	document.cookie = `${name}=${value}; path=/; expires = ${now.toUTCString()}   `;
+}
+
+//미션1 = 각 버튼 클릭 시 사용자 컴퓨터에 1시간동안 유지되는 쿠키 생성
+//쿠키 형식: color = 클릭한 버튼의 생성 코드
