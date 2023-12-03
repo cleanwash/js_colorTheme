@@ -6,10 +6,9 @@
 
 const colors = ['hotpink', 'cornflowerblue', 'violet', '#333'];
 
-const btns = createPickerDOM(colors);
-console.log(btns);
+const [btnColors, btnStnReset] = createPickerDOM(colors);
 
-btns.forEach((el, idx) => {
+btnColors.forEach((el, idx) => {
 	el.addEventListener('click', (e) => {
 		const color = e.currentTarget.innerText;
 		console.log(color);
@@ -24,10 +23,12 @@ function createPickerDOM(arr) {
 		tags += `<span style='background-color:${data}'> ${data} </span>`;
 	});
 
+	tags += `<button class="btnReset">컬러 초기화 </button>`;
+
 	aside.innerHTML = tags;
 	document.body.append(aside);
 
-	return document.querySelectorAll('aside span');
+	return [document.querySelectorAll('aside span'), document.querySelector('aside .btnReset')];
 }
 
 function setCookie(name, value, expires) {
