@@ -17,6 +17,7 @@ if (document.cookie.indexOf('color=') < 0) {
 btnColors.forEach((el) => {
 	el.addEventListener('click', (e) => {
 		const color = e.currentTarget.innerText;
+		console.log(color);
 		setCookie('color', color, 1);
 		document.body.className = color;
 	});
@@ -25,7 +26,9 @@ btnColors.forEach((el) => {
 btnReset.addEventListener('click', () => {
 	const pos = document.cookie.indexOf('color=');
 	if (pos >= 0) {
+		console.log(document.cookie);
 		const restCookie = document.cookie.slice(pos + 6);
+		console.log('rest', restCookie);
 		const colorVal = restCookie.split(' ')[0];
 		setCookie('color', colorVal, 0);
 		document.body.className = '';
@@ -44,7 +47,6 @@ function createPickerDOM(arr) {
 
 	aside.innerHTML = tags;
 	document.body.append(aside);
-
 	return [document.querySelectorAll('aside span'), document.querySelector('aside .btnReset')];
 }
 
