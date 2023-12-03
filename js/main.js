@@ -6,7 +6,8 @@
 
 const colors = ['hotpink', 'cornflowerblue', 'violet', '#333'];
 
-createPickerDOM(colors);
+const btns = createPickerDOM(colors);
+console.log(btns);
 
 function createPickerDOM(arr) {
 	const aside = document.createElement('aside');
@@ -18,4 +19,6 @@ function createPickerDOM(arr) {
 
 	aside.innerHTML = tags;
 	document.body.append(aside);
+
+	return document.querySelectorAll('aside span');
 }
