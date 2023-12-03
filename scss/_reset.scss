@@ -17,20 +17,6 @@ li {
 html {
 	font-size: 16px;
 }
-:root {
-	--pointColor: #333;
-}
-
-.hotpink {
-	--pointColor: hotpink;
-}
-.cornflowerblue {
-	--pointColor: cornflowerblue;
-}
-.violet {
-	--pointColor: violet;
-}
-
 body {
-	transition: background-color 1s;
+	--pointColor: #333;
 }
