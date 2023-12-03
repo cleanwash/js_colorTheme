@@ -20,3 +20,17 @@ html {
 :root {
 	--pointColor: #333;
 }
+
+.hotpink {
+	--pointColor: hotpink;
+}
+.cornflowerblue {
+	--pointColor: cornflowerblue;
+}
+.violet {
+	--pointColor: violet;
+}
+
+body {
+	transition: background-color 1s;
+}

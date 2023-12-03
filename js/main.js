@@ -13,10 +13,10 @@ if (document.cookie.indexOf('color=') < 0) {
 	document.body.className = colorVal;
 }
 
+//span버튼 클릭시 해당 색상값으로 cookie='색상값' 형태의 쿠키 생성
 btnColors.forEach((el) => {
 	el.addEventListener('click', (e) => {
 		const color = e.currentTarget.innerText;
-		console.log(color);
 		setCookie('color', color, 1);
 		document.body.className = color;
 	});
@@ -24,11 +24,12 @@ btnColors.forEach((el) => {
 
 btnReset.addEventListener('click', () => {
 	const pos = document.cookie.indexOf('color=');
-	if (!pos < 0) {
+	if (pos >= 0) {
 		const restCookie = document.cookie.slice(pos + 6);
-		console.log('rest', restCookie);
 		const colorVal = restCookie.split(' ')[0];
 		setCookie('color', colorVal, 0);
+		document.body.className = '';
+		alert('색상 코드값 초기화');
 	}
 });
 
@@ -43,6 +44,7 @@ function createPickerDOM(arr) {
 
 	aside.innerHTML = tags;
 	document.body.append(aside);
+
 	return [document.querySelectorAll('aside span'), document.querySelector('aside .btnReset')];
 }
 

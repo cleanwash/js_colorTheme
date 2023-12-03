@@ -25,6 +25,22 @@ html {
   --pointColor: #333;
 }
 
+.hotpink {
+  --pointColor: hotpink;
+}
+
+.cornflowerblue {
+  --pointColor: cornflowerblue;
+}
+
+.violet {
+  --pointColor: violet;
+}
+
+body {
+  transition: background-color 1s;
+}
+
 header {
   width: 70vw;
   display: flex;
@@ -106,6 +122,18 @@ footer h1 {
   border: 1px solid #777;
   text-indent: -99999px;
   cursor: pointer;
+}
+
+.hotpink {
+  --pointColor: hotpink;
+}
+
+.cornflowerblue {
+  --pointColor: cornflowerblue;
+}
+
+.violet {
+  --pointColor: violet;
 }
 
 /*# sourceMappingURL=style.css.map */
