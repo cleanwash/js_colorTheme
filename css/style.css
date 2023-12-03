@@ -1,18 +1,111 @@
-/* Error: expected "}".
- *   ,
- * 1 |  {
- *   |  ^
- *   '
- *   scss\_reset.scss 1:2  @import
- *   scss\style.scss 1:9   root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "}".\a   \2577 \a 1 \2502   {\d\a   \2502   ^\a   \2575 \a   scss\\_reset.scss 1:2  @import\a   scss\\style.scss 1:9   root stylesheet';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  --pointColor: #333;
+}
+
+header {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0px;
+  border-bottom: 1px solid #aaa;
+  margin: 0px auto;
+}
+header h1 {
+  font-size: 1.7rem;
+  color: varl(--pointColor);
+}
+header ul {
+  display: flex;
+  gap: 40px;
+  font-size: 1.2rem;
+  color: var(--pointColor);
+}
+
+figure {
+  width: 70vw;
+  height: 40vh;
+  background-color: var(--pointColor);
+  margin: 50px auto 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2rem;
+}
+
+section {
+  width: 70vw;
+  margin: 0px auto 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section h2 {
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--pointColor);
+}
+section article {
+  width: 22%;
+  height: 15vh;
+  background-color: var(--pointColor);
+}
+
+footer {
+  width: 70vw;
+  margin: 0px auto;
+  border-top: 1px solid #bbb;
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+footer h1 {
+  font-size: 1.4rem;
+}
+
+.picker {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #555;
+  padding: 5px 10px;
+  display: flex;
+  gap: 10px;
+}
+.picker span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: gray;
+  border: 1px solid #777;
+  text-indent: -99999px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
